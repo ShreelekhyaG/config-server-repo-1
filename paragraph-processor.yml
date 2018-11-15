@@ -6,4 +6,13 @@ producer:
 sentence_rule_path: '"paragraph-processor/src/main/resources/sentence_break_rules"'
 server:
     port: 8433
-
+eureka:         #tells about the Eureka server details and its refresh time
+ client:
+   serviceUrl:
+     defaultZone: http://localhost:8066/eureka/
+   healthcheck:
+     enabled: true
+   lease:
+     duration: 5
+   register-with-eureka: true
+   fetch-registry: true

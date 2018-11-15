@@ -2,4 +2,13 @@ producer:
     port: 172.23.239.231
 server:
     port: 8094
-
+eureka:         #tells about the Eureka server details and its refresh time
+ client:
+   serviceUrl:
+     defaultZone: http://localhost:8066/eureka/
+   healthcheck:
+     enabled: true
+   lease:
+     duration: 5
+   register-with-eureka: true
+   fetch-registry: true
